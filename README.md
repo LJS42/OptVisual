@@ -34,3 +34,27 @@ method = GD(0.01, 200, 10)
 # Visualize optimization process
 optvisual(fun, method; x0=[-3.0, -3.0])
 ```
+
+## Supports self-defined functions and optimization methods
+
+Function:
+```julia
+
+struct yourfunction <: AbstractTestFunction
+    d::Int #dimension
+end
+
+function f(::yourfunction, x::AbstractVector)
+    #your function here
+end
+```
+
+Method:
+```julia
+struct yourmethod <: AbstractOptMethod
+    #your hyperpameter
+end
+
+function Opt(fun::AbstractTestFunction, method::yourmethod, x::AbstractVector)
+    #your method
+end
