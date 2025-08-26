@@ -57,4 +57,10 @@ end
 
 function Opt(fun::AbstractTestFunction, method::yourmethod, x::AbstractVector)
     #your method
+
+    #One step! Example:
+    #g = grad(fun, x)
+    #x -= method.η * g
+    #return x
 end
+```
